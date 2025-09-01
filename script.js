@@ -1,31 +1,18 @@
 const galleryTrack = document.getElementById("gallery-track");
 
-// Try to load images sequentially (image1, image2, image3...)
-let index = 1;
+// Only 2 images for now
+const imageList = ["image1.jpg", "image2.jpg"];
 
-function loadNextImage() {
-  const img = new Image();
-  img.src = `images/image${index}.jpg`;
+// Load images
+imageList.forEach(fileName => {
+  const img = document.createElement("img");
+  img.src = `images/${fileName}`;
   img.alt = "Makeup Portfolio";
+  img.onclick = () => window.open(img.src, "_blank"); // open raw
+  galleryTrack.appendChild(img);
+});
 
-  // If image loads → add it, then try next one
-  img.onload = () => {
-    img.onclick = () => window.open(img.src, "_blank"); // open raw
-    galleryTrack.appendChild(img);
-    index++;
-    loadNextImage(); // try next image
-  };
-
-  // If image not found → stop loop
-  img.onerror = () => {
-    console.log(`No more images after image${index - 1}.jpg`);
-  };
-}
-
-// Start loading from image1.jpg
-loadNextImage();
-
-// Smooth horizontal scroll
+// Smooth horizontal scroll with mouse wheel
 const gallery = document.querySelector(".gallery");
 gallery.addEventListener("wheel", (evt) => {
   evt.preventDefault();
