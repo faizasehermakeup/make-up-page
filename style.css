@@ -1,0 +1,60 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f7c6d9, #f9e4ec);
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* Gallery */
+.gallery {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px;
+}
+.gallery-track {
+  display: inline-flex;
+  gap: 20px;
+}
+.gallery img {
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f7f7f7;
+}
+.contact h2 {
+  margin-bottom: 20px;
+}
+.contact a {
+  color: #d63384;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
