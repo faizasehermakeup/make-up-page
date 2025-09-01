@@ -1,7 +1,7 @@
 const galleryTrack = document.getElementById("gallery-track");
 
 // Only 2 images for now
-const imageList = ["image1.jpg", "image2.jpg"];
+const imageList = ["image1.jpg", "image2.jpg", "image3.jpg"];
 
 // Load images
 imageList.forEach(fileName => {
