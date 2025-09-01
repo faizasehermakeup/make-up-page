@@ -1,60 +1,80 @@
 /* General styling */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  color: #eee;
+  overflow-x: hidden;
 }
 
 /* Hero section */
 .hero {
   text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f7c6d9, #f9e4ec);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #222;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .hero p {
   font-size: 1.3rem;
-  color: #555;
+  font-weight: 300;
 }
 
 /* Gallery */
 .gallery {
   overflow-x: auto;
   white-space: nowrap;
-  padding: 20px;
+  padding: 40px 10px;
+  scrollbar-width: none;
+}
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 .gallery-track {
   display: inline-flex;
-  gap: 20px;
+  gap: 25px;
+  transition: transform 0.3s ease-in-out;
 }
 .gallery img {
-  height: 300px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  height: 320px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
 }
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotateY(10deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
 /* Contact */
 .contact {
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
-  background: #f7f7f7;
+  background: #222;
 }
 .contact h2 {
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 .contact a {
-  color: #d63384;
+  color: #ff6f91;
+  font-size: 1.3rem;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s;
 }
 .contact a:hover {
-  text-decoration: underline;
+  transform: scale(1.1);
+}
+.insta-icon {
+  width: 28px;
+  height: 28px;
 }
