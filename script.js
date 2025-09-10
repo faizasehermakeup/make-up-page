@@ -2,17 +2,19 @@ const galleryTrack = document.getElementById("gallery-track");
 
 const imageList = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"];
 
-// Load images
+// Load images dynamically
 imageList.forEach(fileName => {
   const img = document.createElement("img");
   img.src = `images/${fileName}`;
   img.alt = "Makeup Portfolio";
-  img.onclick = () => window.open(img.src, "_blank"); // open raw
+  img.onclick = () => window.open(img.src, "_blank"); // open raw image
   galleryTrack.appendChild(img);
 });
 
-// Horizontal scroll with mouse wheel
-const gallery = document.querySelector(".gallery");
+// Get gallery container
+const gallery = document.getElementById("gallery");
+
+// Mouse wheel horizontal scroll
 gallery.addEventListener("wheel", (evt) => {
   evt.preventDefault();
   gallery.scrollLeft += evt.deltaY;
@@ -22,7 +24,7 @@ gallery.addEventListener("wheel", (evt) => {
 const leftArrow = document.getElementById("arrow-left");
 const rightArrow = document.getElementById("arrow-right");
 
-const scrollAmount = 320; // Adjust based on image width
+const scrollAmount = 320; // move one image width
 
 leftArrow.addEventListener("click", () => {
   gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
