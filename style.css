@@ -66,23 +66,66 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Gallery */
-.gallery-track {
+/* Gallery Container */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+}
+
+.gallery {
   overflow-x: auto;
   scroll-behavior: smooth;
+  width: 100%;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 15px;
   padding: 1rem;
 }
+
 .gallery-track img {
   height: 300px;
-  border-radius: 12px;
+  flex-shrink: 0;
+  border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 .gallery-track img:hover {
   transform: scale(1.05);
+}
+
+/* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
 }
 
 /* Testimonials */
@@ -124,63 +167,3 @@ iframe {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
-
-.gallery-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.gallery {
-  display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  width: 100%;
-}
-
-.gallery-track {
-  display: flex;
-  gap: 15px;
-}
-
-.gallery-track img {
-  height: 300px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-track img:hover {
-  transform: scale(1.05);
-}
-
-/* Arrow buttons */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  z-index: 2;
-  transition: background 0.3s ease;
-}
-
-.arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
-}
-
