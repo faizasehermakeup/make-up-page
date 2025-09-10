@@ -11,9 +11,23 @@ imageList.forEach(fileName => {
   galleryTrack.appendChild(img);
 });
 
-// Smooth horizontal scroll with mouse wheel
+// Horizontal scroll with mouse wheel
 const gallery = document.querySelector(".gallery");
 gallery.addEventListener("wheel", (evt) => {
   evt.preventDefault();
   gallery.scrollLeft += evt.deltaY;
+});
+
+// Arrow navigation
+const leftArrow = document.getElementById("arrow-left");
+const rightArrow = document.getElementById("arrow-right");
+
+const scrollAmount = 320; // Adjust based on image width
+
+leftArrow.addEventListener("click", () => {
+  gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+rightArrow.addEventListener("click", () => {
+  gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
 });
