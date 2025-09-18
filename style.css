@@ -198,7 +198,7 @@ section {
 }
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     text-align: center;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -296,12 +296,12 @@ section {
 .thumbnail-container {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 .thumbnail-item {
-    width: 100px;
-    height: 125px;
+    width: 80px;
+    height: 100px;
     border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
@@ -324,17 +324,17 @@ section {
     padding: 6rem 0;
 }
 .swiper-container {
-    width: 80%;
+    width: 90%;
     max-width: 800px;
     margin: auto;
 }
 .swiper-slide {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 .swiper-slide p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: italic;
     line-height: 1.5;
     margin-bottom: 1.5rem;
@@ -375,4 +375,45 @@ iframe { border: none; }
     padding: 2rem;
     margin-top: 4rem;
     font-size: 0.9rem;
+}
+
+
+/* --- Responsive Styles (Mobile & Small Tablets) --- */
+@media (max-width: 768px) {
+    .cursor {
+        display: none; /* Hide custom cursor on touch devices */
+    }
+    body {
+        cursor: auto; /* Show default cursor */
+    }
+
+    .nav {
+        padding: 1rem 1.5rem;
+    }
+    .nav-links-container {
+        gap: 1.5rem;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    .contact-button {
+        padding: 0.4rem 1rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .about {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+    .about .section-body {
+        margin: auto;
+    }
+    
+    .thumbnail-item {
+        width: 70px;
+        height: 87.5px;
+    }
 }
