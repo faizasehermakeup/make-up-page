@@ -18,7 +18,14 @@ body {
     line-height: 1.7;
     cursor: none; /* Hide default cursor */
     overflow-x: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
+
+body.loading {
+    opacity: 0;
+}
+
 
 /* --- Custom Cursor --- */
 .cursor {
@@ -189,10 +196,6 @@ section {
     margin: auto;
     overflow: hidden; /* For mechanical text animation */
 }
-.section-title, .section-subtitle, .section-body p {
-    /* Base state for animation */
-    opacity: 0;
-}
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 6vw, 4rem);
@@ -224,10 +227,6 @@ section {
     gap: 4rem;
     min-height: 80vh;
 }
-.about-image {
-    flex: 1;
-    opacity: 0;
-}
 .about-image img {
     width: 100%;
     height: auto;
@@ -251,7 +250,6 @@ section {
     background: linear-gradient(145deg, #1a1a1a, #121212);
     position: relative;
     overflow: hidden; /* For border animation */
-    opacity: 0; /* For scroll animation */
 }
 .service-card::before, .service-card::after {
     content: '';
@@ -287,6 +285,7 @@ section {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    background-color: #222; /* Placeholder background */
 }
 #spotlight-image {
     width: 100%;
@@ -308,7 +307,6 @@ section {
     cursor: pointer;
     border: 2px solid #444;
     transition: border-color 0.4s, transform 0.4s;
-    opacity: 0; /* For scroll animation */
 }
 .thumbnail-item.active {
     border-color: #D4AF37;
