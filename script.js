@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { src: "image3.jpg", alt: "Classic Red Lip" },
         { src: "image4.jpg", alt: "Modern Mehndi Look" },
         { src: "image5.jpg", alt: "Editorial Edge" },
+        { src: "image6.jpg", alt: "Soft Natural Beauty" },
+        { src: "image7.jpg", alt: "Soft Natural Beauty" },
+        { src: "image8.jpg", alt: "Soft Natural Beauty" },
+        { src: "image9.jpg", alt: "Soft Natural Beauty" },
     ];
     let currentImageIndex = 0;
 
