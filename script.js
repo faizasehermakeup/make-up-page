@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
     // --- Custom Cursor Logic ---
     const cursor = document.querySelector(".cursor");
     const links = document.querySelectorAll("a, button, .thumbnail-item");
@@ -20,43 +22,42 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleClass: {className: 'scrolled', targets: nav}
     });
 
-    // --- GSAP Mechanical Animations ---
-    gsap.registerPlugin(ScrollTrigger);
+    // --- Section-Based Animation Logic (THE FIX) ---
+    // This new approach ensures elements are animated reliably.
 
-    // Hero Text Animation (Mechanical Reveal)
-    const heroP = document.querySelector('.hero p');
-    gsap.from(heroP, { duration: 1.5, textContent: "", ease: "none", delay: 0.5 });
-    gsap.from(".hero h1", { duration: 1.2, y: 80, opacity: 0, ease: "power3.out", delay: 0.2 });
+    // 1. Animate Hero on load
+    const heroTl = gsap.timeline();
+    heroTl.from(".hero h1", { autoAlpha: 0, y: 50, duration: 1.2, ease: "power3.out" })
+          .from(".hero p", { autoAlpha: 0, y: 30, duration: 1, ease: "power3.out" }, "-=0.8");
 
-    // Section Content Mechanical Reveal Animation
-    function createTextReveal(selector) {
-        gsap.utils.toArray(selector).forEach(elem => {
-            gsap.from(elem, {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: elem,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
-    }
-    createTextReveal(".section-title");
-    createTextReveal(".section-subtitle");
-    createTextReveal(".section-body p");
+    // 2. Animate About Section on scroll
+    const aboutTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 70%",
+            toggleActions: "play none none reverse"
+        }
+    });
+    aboutTl.from(".about .section-title", { autoAlpha: 0, y: 50, duration: 1 })
+           .from(".about .section-subtitle", { autoAlpha: 0, y: 40, duration: 1 }, "-=0.8")
+           .from(".about .section-body p", { autoAlpha: 0, y: 30, stagger: 0.15, duration: 0.8 }, "-=0.7")
+           .from(".about .about-image", { autoAlpha: 0, x: 50, duration: 1 }, "-=1");
 
-    gsap.from(".about-image", { duration: 1.2, x: 100, opacity: 0, ease: "power3.out", scrollTrigger: { trigger: ".about", start: "top 70%" } });
-    gsap.from(".service-card", { duration: 0.8, y: 80, opacity: 0, stagger: 0.2, scrollTrigger: { trigger: ".services", start: "top 70%" } });
-
-
+    // 3. Animate Services Section on scroll
+    const servicesTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".services",
+            start: "top 70%",
+            toggleActions: "play none none reverse"
+        }
+    });
+    servicesTl.from(".services .section-title", { autoAlpha: 0, y: 50, duration: 1 })
+              .from(".service-card", { autoAlpha: 0, y: 50, stagger: 0.2, duration: 0.8 }, "-=0.7");
+    
     // --- "Artistry Spotlight" Portfolio Logic ---
     const spotlightImage = document.getElementById("spotlight-image");
     const thumbnailContainer = document.querySelector(".thumbnail-container");
 
-    // IMPORTANT: Make sure you have these 5 images in an 'images' folder
     const portfolioImages = [
         { src: "image1.jpg", alt: "Radiant Bridal Glow" },
         { src: "image2.jpg", alt: "Sultry Evening Glam" },
@@ -66,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     let currentImageIndex = 0;
 
-    // Create thumbnails
     portfolioImages.forEach((imgData, index) => {
         const thumb = document.createElement("div");
         thumb.className = "thumbnail-item";
@@ -82,21 +82,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const thumbnails = document.querySelectorAll(".thumbnail-item");
 
-    // Function to update the spotlight image with animation
     function updateSpotlight(newIndex) {
         const oldIndex = currentImageIndex;
         currentImageIndex = newIndex;
         
-        // Hide cursor during transition to prevent flicker on image
         cursor.classList.add("hidden");
-
-        const tl = gsap.timeline({
-            onComplete: () => cursor.classList.remove("hidden")
-        });
+        
+        const tl = gsap.timeline({ onComplete: () => cursor.classList.remove("hidden") });
 
         tl.to(spotlightImage, {
             duration: 0.5,
-            opacity: 0,
+            autoAlpha: 0,
             y: -30,
             ease: "power3.in"
         }).call(() => {
@@ -107,28 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
             thumbnails[newIndex].classList.add("active");
         }).to(spotlightImage, {
             duration: 0.5,
-            opacity: 1,
+            autoAlpha: 1,
             y: 0,
             ease: "power3.out"
         });
     }
 
-    // Initialize first image
     spotlightImage.src = `images/${portfolioImages[0].src}`;
     thumbnails[0].classList.add("active");
 
-    // Animate thumbnails into view
-    gsap.from(".thumbnail-item", {
-        duration: 0.6,
-        y: 50,
-        opacity: 0,
-        stagger: 0.1,
+    // 4. Animate Portfolio Section on scroll
+    const portfolioTl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".thumbnail-container",
-            start: "top 90%"
+            trigger: ".portfolio",
+            start: "top 70%",
+            toggleActions: "play none none reverse"
         }
     });
-
+    portfolioTl.from(".portfolio .section-title", { autoAlpha: 0, y: 50, duration: 1 })
+               .from(".spotlight-image-wrapper", { autoAlpha: 0, scale: 0.9, duration: 1 }, "-=0.7")
+               .from(".thumbnail-item", { autoAlpha: 0, y: 50, stagger: 0.1, duration: 0.6 }, "-=0.7");
+    
 
     // --- Testimonials Slider (Swiper.js) ---
     new Swiper(".swiper-container", {
@@ -145,5 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
         fadeEffect: {
             crossFade: true
         },
+    });
+
+    // --- Final Step: Reveal the Page ---
+    // This removes the .loading class and fades the body in.
+    window.addEventListener('load', () => {
+        document.body.classList.remove('loading');
     });
 });
