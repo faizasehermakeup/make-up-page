@@ -1,96 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faiza Seher | Makeup Artist in Davanagere & Bangalore</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faiza Seher | Bespoke Makeup Artistry</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- SEO -->
-  <meta name="google-site-verification" content="SYqgXLMQvv_az1X2wvTPtRxkV7gLvothh8XZhHeMiq0" />
-  <meta name="description" content="Professional bridal and party makeup artist based in Davanagere & Bangalore. Book Faiza Seher for weddings, parties, and photoshoots. Instagram: @faiza_sehermakeup">
-  <meta name="keywords" content="Davanagere makeup artist, Bangalore makeup artist, bridal makeup, party makeup, Indian makeup artist, Faiza Seher">
+    <meta name="google-site-verification" content="SYqgXLMQvv_az1X2wvTPtRxkV7gLvothh8XZhHeMiq0" />
+    <meta name="description" content="Faiza Seher is a luxury bridal and glam makeup artist in Davanagere & Bangalore, crafting bespoke looks for weddings, editorials, and exclusive events.">
+    <meta name="keywords" content="Davanagere makeup artist, Bangalore makeup artist, luxury bridal makeup, editorial makeup, celebrity makeup artist, Faiza Seher">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Faiza Seher</h1>
-      <p>Luxury Bridal & Glam Makeup Artist<br>in Davanagere & Bangalore</p>
+    <div class="cursor"></div>
+
+    <nav class="nav">
+        <div class="nav-logo">FS</div>
+        <div class="nav-menu-button">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <div class="nav-overlay">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">The Artist</a>
+        <a href="#services" class="nav-link">The Craft</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Book Now</a>
     </div>
-  </header>
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I am a professional makeup artist specializing in bridal, party, and event makeup. 
-      Based in Davanagere and Bangalore, I help my clients shine on their most important days with elegant, flawless looks.
-    </p>
-  </section>
+    <header class="hero" id="hero">
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline src="path/to/your/background-video.mp4" class="hero-video"></video>
+        </div>
+        <div class="hero-content">
+            <h1>Faiza Seher</h1>
+            <p>Bespoke Artistry for Life's Defining Moments</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Explore</span>
+            <div class="arrow-down"></div>
+        </div>
+    </header>
 
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Bridal Makeup</li>
-      <li>Engagement & Party Makeup</li>
-      <li>Photoshoot Makeup</li>
-      <li>Special Occasion Looks</li>
-    </ul>
-  </section>
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="section-title">The Artist</h2>
+            <p class="section-subtitle">"Makeup is not a mask. It is art, passion, and a form of personal expression."</p>
+            <p class="section-body">
+                Based in the heart of Karnataka, Faiza Seher serves both Davanagere and Bangalore with an exclusive, luxury makeup experience. With a profound passion for enhancing natural beauty and an artist's eye for detail, Faiza transforms every client's vision into a breathtaking reality. Her philosophy is built on a foundation of collaboration and personalization, ensuring that every brushstroke is tailored to you.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="images/faiza-profile.jpg" alt="Faiza Seher, Makeup Artist">
+        </div>
+    </section>
 
-  <!-- Portfolio Gallery Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="gallery-container">
-      <button class="arrow left" id="arrow-left">&#10094;</button>
-      <div class="gallery" id="gallery">
-        <div class="gallery-track" id="gallery-track"></div>
-      </div>
-      <button class="arrow right" id="arrow-right">&#10095;</button>
+    <section class="services" id="services">
+        <h2 class="section-title">The Craft</h2>
+        <div class="service-cards-container">
+            <div class="service-card">
+                <h3>Bridal Couture</h3>
+                <p>An unforgettable bridal experience, from consultation to the final touch. We design a timeless, radiant look that lasts through every cherished moment of your wedding day.</p>
+            </div>
+            <div class="service-card">
+                <h3>Editorial & Glam</h3>
+                <p>Bold, creative, and camera-ready. Perfect for photoshoots, high-fashion events, or any occasion that calls for a show-stopping look that commands attention.</p>
+            </div>
+            <div class="service-card">
+                <h3>Skincare Artistry</h3>
+                <p>True beauty begins with flawless skin. As a skincare expert, Faiza provides consultations and skin preparation to ensure your makeup looks impeccable on a healthy, glowing canvas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="gallery-grid">
+            </div>
+    </section>
+    
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img src="" class="lightbox-image" alt="Portfolio view">
     </div>
-  </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>Client Love</h2>
-    <div class="testimonial">
-      <p>“Faiza did my bridal makeup, and I felt like a queen!”</p>
-      <span>- Ayesha S.</span>
-    </div>
-    <div class="testimonial">
-      <p>“She’s incredibly talented and made me look gorgeous at my engagement.”</p>
-      <span>- Priya K.</span>
-    </div>
-    <div class="testimonial">
-      <p>“Her work is pure magic. Highly recommended!”</p>
-      <span>- Nisha R.</span>
-    </div>
-  </section>
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Client Love</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <p>"Faiza is a true artist. She didn't just do my makeup; she created a masterpiece. I have never felt more beautiful in my entire life."</p>
+                    <span>- Ayesha S. | Bridal Couture</span>
+                </div>
+                <div class="swiper-slide">
+                    <p>"Her professionalism and calming presence were a blessing on my chaotic wedding day. The makeup was flawless and lasted all night!"</p>
+                    <span>- Priya K. | Engagement Glam</span>
+                </div>
+                <div class="swiper-slide">
+                    <p>"The compliments I received were endless. Faiza's work is pure magic and she is an absolute joy to work with. Highly recommended!"</p>
+                    <span>- Nisha R. | Party Makeup</span>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Get in Touch</h2>
-    <p>
-      Follow me on Instagram: 
-      <a href="https://www.instagram.com/faiza_sehermakeup" target="_blank">@faiza_sehermakeup</a>
-    </p>
-    <p>Or request a personalized quote:</p>
-    <iframe src="https://forms.gle/cMAHKu3nEQ6cjnGd7" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
-  </section>
+    <section class="contact" id="contact">
+        <h2 class="section-title">Begin Your Transformation</h2>
+        <p class="section-subtitle">For bookings and inquiries in Davanagere & Bangalore, please connect below.</p>
+        <a href="https://www.instagram.com/faiza_sehermakeup" class="instagram-link" target="_blank">
+            Follow on Instagram @faiza_sehermakeup
+        </a>
+        <p class="form-intro">Or request a personalized quote for your special day:</p>
+        <div class="form-container">
+            <iframe src="https://forms.gle/cMAHKu3nEQ6cjnGd7" width="100%" height="500" frameborder="0"></iframe>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Faiza Seher Makeup | Serving Davanagere & Bangalore</p>
-  </footer>
+    <footer class="footer">
+        <p>&copy; 2025 Faiza Seher Makeup Artistry | Davanagere & Bangalore</p>
+    </footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
